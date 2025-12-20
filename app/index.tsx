@@ -57,6 +57,17 @@ export default function Index() {
   <Text style={styles.linkText}>FlatList Example</Text>
 </Link>
 
+<Link href="/chart" style={styles.link}>
+  <Text style={styles.linkText}>Chart</Text>
+</Link>
+
+<Link href="/your-health" style={styles.link}>
+  <Text style={styles.linkText}>Your Health</Text>
+</Link>
+
+<Link href="/todolist" style={styles.link}>
+          <Text style={styles.linkText}>Todo List</Text>
+        </Link>
 
 
 
