@@ -73,7 +73,9 @@ export default function Index() {
     <Text style={styles.linkText}>Location</Text>
 </Link>
 
-
+<Link href="/location-quiz" style={styles.link}>
+    <Text style={styles.linkText}>Location-quiz</Text>
+</Link>
 
 
 
