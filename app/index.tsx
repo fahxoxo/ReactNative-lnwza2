@@ -76,6 +76,14 @@ export default function Index() {
 <Link href="/location-quiz" style={styles.link}>
     <Text style={styles.linkText}>Location-quiz</Text>
 </Link>
+<Link href="/ant" style={styles.link}>
+        <Text style={styles.linkText}>heros</Text>
+</Link>
+
+<Link href="/charmander" style={styles.link}>
+        <Text style={styles.linkText}>Pokemon</Text>
+</Link>
+
 
 
 
