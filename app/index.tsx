@@ -92,6 +92,9 @@ export default function Index() {
   <Text style={styles.linkText}>Book Online</Text>
 </Link>
 
+<Link href="/profile" style={styles.link}>
+  <Text style={styles.linkText}>profile</Text>
+</Link>
 
 
 

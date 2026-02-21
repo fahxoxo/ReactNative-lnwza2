@@ -5,7 +5,7 @@ import * as ImagePicker from "expo-image-picker";
 import { useNavigation, useRouter } from "expo-router";
 import { addBook } from "@/utils/book-storage";
 import { Book } from "@/utils/types";
-import { addBookDatabase } from "@/utils/book-service";
+import { addBookDatabase, uploadBookImage } from "@/utils/book-service";
 
 export default function CreateBook() {
   const [title, setTitle] = useState("");
@@ -33,7 +33,10 @@ export default function CreateBook() {
     });
     if (!res.canceled) {
       // setImage(res.uri);
-      setImage(res.assets[0].uri);
+      //setImage(res.assets[0].uri);
+      const uploadedUrl = await uploadBookImage(res.assets[0].uri);
+  setImage(uploadedUrl);
+  console.log("Uploaded image URL:", uploadedUrl);
     }else{
       Alert.alert("Cancelled", "คุณไม่ได้เลือกรูปภาพ หรือ error เกิดขึ้น");
     }

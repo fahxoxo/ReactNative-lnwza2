@@ -1,9 +1,9 @@
 // app/book-online/edit/[id].tsx
-import { getBookByIdDatabase, updateBookDatabase } from "@/utils/book-service";
+import { getBookByIdDatabase, updateBookDatabase, uploadBookImage } from "@/utils/book-service";
 import { Book } from "@/utils/types";
 import * as ImagePicker from "expo-image-picker";
 import { useLocalSearchParams, useNavigation, useRouter } from "expo-router";
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import {
   Alert,
   Button,
@@ -57,7 +57,10 @@ export default function EditBook() {
       quality: 0.7,
     });
     if (!res.canceled) {
-      setImage(res.assets[0].uri);
+      //setImage(res.assets[0].uri);
+      const uploadedUrl = await uploadBookImage(res.assets[0].uri);
+  setImage(uploadedUrl);
+  console.log("Uploaded image URL:", uploadedUrl);
     }
   };
 
